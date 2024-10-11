@@ -4,7 +4,7 @@
 Official PyTorch implementation for **[A Dual Approach to Imitation Learning from Observations with Offline Datasets)** for CoRL 2024. DILO allows for imitating expert observation (action-free) trajectories using suboptimal data.
 
 <p align="center">
-  <img src="images/dilo_summary.pdf" alt="DILO Overview" width="600">
+  <img src="images/dilo_overview.png" alt="DILO Overview" width="600">
 </p>
 
 ## How to run the code

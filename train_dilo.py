@@ -11,9 +11,7 @@ from dataset_utils import SNSD4RLDataset,SNSD4RLMixedDataset, split_into_traject
 import sys
 import warnings
 warnings.filterwarnings('ignore', category=DeprecationWarning)
-# from pathlib import Path
-# import hydra
-# from omegaconf import DictConfig
+import random
 import numpy as np
 import torch
 from trainer import TrainerSNS as TrainerDILO
@@ -105,7 +103,10 @@ def normalize(dataset):
 
 
 def main(_):
-
+    # Set all seeds
+    torch.manual_seed(FLAGS.seed)
+    np.random.seed(FLAGS.seed)
+    random.seed(FLAGS.seed)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     ts_str = datetime.datetime.fromtimestamp(time.time()).strftime("%Y-%m-%d_%H-%M-%S")
     save_dir = os.path.join(FLAGS.save_dir, ts_str)
